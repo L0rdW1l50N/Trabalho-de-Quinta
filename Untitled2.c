@@ -51,7 +51,7 @@ void main(void){
 			case 'e' : excluir(); break;
 			case 'c' : consultar(); break;
 			case 'l' : listar(); break;
-			case 's' : exit(); break;
+			case 's' : exit(0); break;
 			case 'h' : help(); break;
 		} while(1);
 	}
@@ -85,12 +85,12 @@ void incluir(void){
 		if((strcmp(fun.cpf,"fim")!=0)&&(strcmp(fun.cpf,"FIM")!=0)){
 			printf("\n Nome:"); gets(fun.nome);
 			printf("\n Telefone:"); gets(fun.telefone);
-			printf("\n Endereço:"); gets(fun.endereco);
-			printf("\n Ano de Contratação:"); gets(fun.ano);
+			printf("\n EndereÃ§o:"); gets(fun.endereco);
+			printf("\n Ano de ContrataÃ§Ã£o:"); gets(fun.ano);
 			fun.status='1';
 			//esta bolinha alt +169
-			if(fwrite(®, sizeof(struct funcionario), 1, fp) !=1){
-				printf("zn Erro de gravação!!");
+			if(fwrite(Â®, sizeof(struct funcionario), 1, fp) !=1){
+				printf("zn Erro de gravaÃ§Ã£o!!");
 				getch();
 				
 			}
@@ -113,14 +113,14 @@ int busca(void){
 	rewind(fp);
 	while((!feof(fp)))&&(achou==-1))
 	{
-		fread(®, sizeof(struct funcionario), 1, fp);
+		fread(Â®, sizeof(struct funcionario), 1, fp);
 		if (!feof(fp))
 	{if(strcmp(cpfbus, fun.cpf)==0)
 		{if (fun.status=='0')
 			{posicao=-2;}
 		achou=1;
 		}
-	else{posiçao++}
+	else{posiÃ§ao++}
 }
 		else{posicao=-1;}
 	}
